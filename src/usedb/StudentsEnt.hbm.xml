@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="usedb.StudentsEnt" table="Students" schema="YanDB">
+        <id name="idStud">
+            <column name="id_stud" sql-type="int(11)"/>
+        </id>
+        <property name="sfio">
+            <column name="sfio" sql-type="varchar(100)" length="100"/>
+        </property>
+        <property name="llogin">
+            <column name="llogin" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="lpassword">
+            <column name="lpassword" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

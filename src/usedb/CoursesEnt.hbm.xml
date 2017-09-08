@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="usedb.CoursesEnt" table="Courses" schema="YanDB">
+        <id name="idCourse">
+            <column name="id_course" sql-type="int(11)"/>
+        </id>
+        <property name="nCourse">
+            <column name="n_course" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

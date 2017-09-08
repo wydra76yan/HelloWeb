@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="usedb.VnallEnt" table="vnall" schema="YanDB">
+        <id name="id">
+            <column name="id" sql-type="bigint(17)"/>
+        </id>
+        <property name="idCourse">
+            <column name="id_course" sql-type="int(11)"/>
+        </property>
+        <property name="nCourse">
+            <column name="n_course" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="idStud">
+            <column name="id_stud" sql-type="int(11)"/>
+        </property>
+        <property name="sfio">
+            <column name="sfio" sql-type="varchar(100)" length="100"/>
+        </property>
+        <property name="idLec">
+            <column name="id_lec" sql-type="int(11)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

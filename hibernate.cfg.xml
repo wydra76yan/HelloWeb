@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.url">jdbc:mysql://localhost:3306/YanDB</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <mapping class="usedb.CoursesEnt"/>
+        <mapping resource="usedb/CoursesEnt.hbm.xml"/>
+        <mapping class="usedb.LectorsEnt"/>
+        <mapping resource="usedb/LectorsEnt.hbm.xml"/>
+        <mapping class="usedb.StudingEnt"/>
+        <mapping resource="usedb/StudingEnt.hbm.xml"/>
+        <mapping class="usedb.VallEnt"/>
+        <mapping resource="usedb/VallEnt.hbm.xml"/>
+        <mapping class="usedb.StudentsEnt"/>
+        <mapping resource="usedb/StudentsEnt.hbm.xml"/>
+        <mapping class="usedb.VnallEnt"/>
+        <mapping resource="usedb/VnallEnt.hbm.xml"/>
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>

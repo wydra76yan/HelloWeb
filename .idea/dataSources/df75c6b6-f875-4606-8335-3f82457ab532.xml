@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="mylocaldb">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="test">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="sys"/>
+    <schema id="7" parent="1" name="wp1"/>
+    <table id="8" parent="2" name="address"/>
+    <table id="9" parent="2" name="course"/>
+    <table id="10" parent="2" name="course_student"/>
+    <table id="11" parent="2" name="lecturer"/>
+    <table id="12" parent="2" name="phonebook"/>
+    <table id="13" parent="2" name="posts"/>
+    <table id="14" parent="2" name="student"/>
+    <view id="15" parent="2" name="vphones">
+      <Comment>VIEW</Comment>
+    </view>
+    <routine id="16" parent="2" name="F_Dist3D">
+      <RoutineKind>function</RoutineKind>
+    </routine>
+    <routine id="17" parent="2" name="getlastname">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="18" parent="2" name="hello">
+      <RoutineKind>function</RoutineKind>
+    </routine>
+    <routine id="19" parent="2" name="simpleproc">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <column id="20" parent="8" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="21" parent="8" name="zip">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="22" parent="8" name="state">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="23" parent="8" name="city">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="24" parent="8" name="street">
+      <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <key id="25" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="26" parent="9" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="27" parent="9" name="title">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="9" name="lector">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="9" name="type">
+      <Position>4</Position>
+      <DataType>varchar(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="9" name="mark">
+      <Position>5</Position>
+      <DataType>int(3)|0</DataType>
+    </column>
+    <key id="31" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="32" parent="10" name="course_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="10" name="student_id">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="34" parent="10" name="course_fk">
+      <ColNames>course_id</ColNames>
+    </index>
+    <index id="35" parent="10" name="student_fk">
+      <ColNames>student_id</ColNames>
+    </index>
+    <key id="36" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>course_id
+student_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="37" parent="10" name="course_student_ibfk_1">
+      <ColNames>course_id</ColNames>
+      <RefSchemaName>test</RefSchemaName>
+      <RefTableName>course</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="38" parent="10" name="course_student_ibfk_2">
+      <ColNames>student_id</ColNames>
+      <RefSchemaName>test</RefSchemaName>
+      <RefTableName>student</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="39" parent="11" name="first_name">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="11" name="last_name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="41" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>first_name
+last_name</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="42" parent="12" name="idphonebook">
+      <Position>1</Position>
+      <Comment>Primary key</Comment>
+      <DataType>int(5)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="43" parent="12" name="lastname">
+      <Position>2</Position>
+      <Comment>Last name</Comment>
+      <DataType>varchar(250)|0</DataType>
+    </column>
+    <column id="44" parent="12" name="phone">
+      <Position>3</Position>
+      <Comment>Phone number</Comment>
+      <DataType>bigint(12)|0</DataType>
+    </column>
+    <column id="45" parent="12" name="modified_by">
+      <Position>4</Position>
+      <Comment>Who modified record</Comment>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="46" parent="12" name="date_modified">
+      <Position>5</Position>
+      <Comment>When modified record</Comment>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <key id="47" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idphonebook</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <trigger id="48" parent="12" name="phonebook_bi">
+      <Turn>before-row</Turn>
+      <Events>I</Events>
+    </trigger>
+    <trigger id="49" parent="12" name="phonebook_bu">
+      <Turn>before-row</Turn>
+      <Events>U</Events>
+    </trigger>
+    <column id="50" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="51" parent="13" name="txt">
+      <Position>2</Position>
+      <DataType>varchar(225)|0</DataType>
+    </column>
+    <key id="52" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="53" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="54" parent="14" name="first_name">
+      <Position>2</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="14" name="last_name">
+      <Position>3</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="14" name="address_id">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="57" parent="14" name="address_fk">
+      <ColNames>address_id</ColNames>
+    </index>
+    <key id="58" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="59" parent="14" name="student_ibfk_1">
+      <ColNames>address_id</ColNames>
+      <RefSchemaName>test</RefSchemaName>
+      <RefTableName>address</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="60" parent="15" name="phone">
+      <Position>1</Position>
+      <Comment>Phone number</Comment>
+      <DataType>bigint(12)|0</DataType>
+    </column>
+    <column id="61" parent="15" name="lastname">
+      <Position>2</Position>
+      <Comment>Last name</Comment>
+      <DataType>varchar(250)|0</DataType>
+    </column>
+    <argument id="62" parent="16">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>decimal(10)|0</DataType>
+    </argument>
+    <argument id="63" parent="16" name="x1">
+      <DataType>decimal(10)|0</DataType>
+    </argument>
+    <argument id="64" parent="16" name="y1">
+      <DataType>decimal(10)|0</DataType>
+    </argument>
+    <argument id="65" parent="17" name="p_phone">
+      <DataType>bigint(20)|0</DataType>
+    </argument>
+    <argument id="66" parent="17" name="p_lastname">
+      <ArgumentDirection>O</ArgumentDirection>
+      <DataType>varchar(250)|0</DataType>
+    </argument>
+    <argument id="67" parent="18">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>varchar(50)|0</DataType>
+    </argument>
+    <argument id="68" parent="18" name="s">
+      <DataType>char(20)|0</DataType>
+    </argument>
+    <argument id="69" parent="19" name="param1">
+      <ArgumentDirection>O</ArgumentDirection>
+      <DataType>int(11)|0</DataType>
+    </argument>
+  </database-model>
+</dataSource>

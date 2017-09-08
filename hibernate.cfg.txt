@@ -1,0 +1,9 @@
+нужен
+
+e:\Java\tomcat\bin\
+
+c:\Users\YanVydra\apache-tomcat-7.0.76\bin\hibernate.cfg.xml
+его нужно править
+
+таблица.hbm.xml
+обязательно ID - актуально для view's
